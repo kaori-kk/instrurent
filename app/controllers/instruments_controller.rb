@@ -36,7 +36,7 @@ class InstrumentsController < ApplicationController
   private
 
   def instrument_params
-    params.require(:instrument).permit(:name, :price, :description, :photo)
+    params.require(:instrument).permit(:name, :price, :description, :photo, :user_id)
   end
 
 end
