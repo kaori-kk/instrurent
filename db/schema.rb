@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_120226) do
+ActiveRecord::Schema.define(version: 2020_02_25_121310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 2020_02_25_120226) do
     t.index ["user_id"], name: "index_instruments_on_user_id"
   end
 
+  create_table "requests", force: :cascade do |t|
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.boolean "accepted", default: false, null: false
+    t.bigint "user_id"
+    t.bigint "instrument_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrument_id"], name: "index_requests_on_instrument_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -62,4 +74,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_120226) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "instruments", "users"
+  add_foreign_key "requests", "instruments"
+  add_foreign_key "requests", "users"
 end
