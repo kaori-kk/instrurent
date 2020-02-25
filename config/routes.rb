@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "instruments#index"
+  root to: "pages#home"
 
   resources :instruments
 
