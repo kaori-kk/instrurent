@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   # resources :users do
   #   collection do
   #     # get 'path', to: 'CONTROLLER#ACTION'
-  get 'profile/all_requests', to: 'dashboards#all_requests'
-  get 'profile/my_requests', to: 'dashboards#my_requests'
-  get 'profile', to: 'dashboards#profile'
+  get 'profile/all_requests', to: 'dashboard#all_requests'
+  get 'profile/my_requests', to: 'dashboard#my_requests'
+  get 'profile', to: 'dashboard#profile'
       # get 'dashboard#all_requests'
       # get 'dashboard#my_requests'
       # get 'dashboard#profile'
