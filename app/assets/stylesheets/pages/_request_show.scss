@@ -1,0 +1,43 @@
+.request-show h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.details h2 {
+  font-size: 20px;
+}
+
+.product-pic  {
+  overflow: hidden;
+  height: 120px;
+  width: 600px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.request-img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.details h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.details p {
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.product-pic .details {
+  padding: 16px;
+}

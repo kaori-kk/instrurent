@@ -1,14 +1,16 @@
-<h1>Thank you for your Request!</h1>
-
-<div class="container">
+<div class="request-show">
+  <h1>Thank you for your Request!</h1>
   <div class="product-pic">
     <% if @instrument.photo.attached? %>
-    <%= cl_image_tag @instrument.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @instrument.photo.key, class: "request-img", height: 200, width: 300, crop: :fill %>
     <% end %>
+    <div class="details">
+      <h2>Name:</h2>
+      <p><%= @instrument.name %></p>
+      <h2>Description:</h2>
+      <p><%= @instrument.description %></p>
+    </div>
   </div>
-  <div class="details">
-    <h2><%= @instrument.name %></h2>
-    <h2><%= @instrument.description %></h2>
-  </div>
-
 </div>
+
+
