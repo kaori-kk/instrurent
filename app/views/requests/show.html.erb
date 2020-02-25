@@ -1,0 +1,14 @@
+<h1>Thank you for your Request!</h1>
+
+<div class="container">
+  <div class="product-pic">
+    <% if @instrument.photo.attached? %>
+    <%= cl_image_tag @instrument.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
+  <div class="details">
+    <h2><%= @instrument.name %></h2>
+    <h2><%= @instrument.description %></h2>
+  </div>
+
+</div>

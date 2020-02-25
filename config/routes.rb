@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :instruments do
     resources :users, only: [:show]
   end
+
+  resources :requests, only: [:show]
 end
