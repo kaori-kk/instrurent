@@ -1,18 +1,44 @@
 <!-- SEARCH FORM LANDING PAGE -->
-<%= simple_form_for [@instrument] do |f| %>
-  <%= f.input :where, label: 'Where are you searching?' %>
-  <%= f.input :instrument, label: 'What kind of instrument are you searching?' %>
-  <%= f.input :start_date, label: 'Start Date?' %>
-  <%= f.input :end_date, label: 'End Date?' %>
-  <%= f.input :remember_me, inline_label: 'Yes, remember me' %>
-  <%= f.submit "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://upload.wikimedia.org/wikipedia/commons/8/8b/20131205_Istanbul_321_cropped.jpg)">
+  <div class="form-container bg-white color-white">
+    <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
+    <%#= f.input :where, label: 'Where are you searching?' %>
+    <%= f.input :name, label: 'What kind of instrument are you searching?' %>
+    <%#= f.input :start_date, label: 'Start Date?' %>
+    <%#= f.input :end_date, label: 'End Date?' %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
 <!-- CARDS LANDING PAGE -->
-<% @instruments.each do |instrument| %>
-  <%= cl_image_tag @instrument.photo.key, height: 150, width: 150, crop:fill if @instrument.photo.attached?%>
-  <p><%= instrument.city %></p>
-  <p><%= instrument.name %></p>
-  <p><%= instrument.price %></p>
-<!--   <p><%= instrument.rating %></p> -->
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @instruments.each do |instrument| %>
+    <div class="col-4">
+      <div class="card-instrument">
+        <% if instrument.photo.attached? %>
+        <%= cl_image_tag instrument.photo.key, height: 150, width: 150, crop: :fill %>
+        <% else %>
+        <%= image_tag 'instrument-placeholder.jpg' %>
+        <% end %>
+        <div class="card-instrument-details">
+          <div class="card-instrument-infos">
+            <%= link_to instrument.name, instrument_path(instrument) %>
+            <p>Description</p>
+            <p>
+              <%= link_to instrument_path(instrument), method: :delete do %>
+              <i class="far fa-trash-alt"></i>
+              <% end %>
+              <%= link_to edit_instrument_path(instrument), method: :get do %>
+              <i class="far fa-edit"></i>
+              <% end %>
+            </p>
+            <h2 class="card-instument-pricing"><%= instrument.price %></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

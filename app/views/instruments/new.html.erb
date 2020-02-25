@@ -1,1 +1,8 @@
-new.html.erb
+<!-- NEW FORM -->
+<%= simple_form_for @instrument do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Add Instrument", class: "btn btn-primary" %>
+<% end %>

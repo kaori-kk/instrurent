@@ -1,1 +1,10 @@
-edit.html.erb
+<!-- EDIT FORM -->
+<%= simple_form_for @instrument do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
+
+
+
