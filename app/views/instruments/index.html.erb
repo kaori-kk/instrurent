@@ -1,0 +1,18 @@
+<!-- SEARCH FORM LANDING PAGE -->
+<%= simple_form_for [@instrument] do |f| %>
+  <%= f.input :where, label: 'Where are you searching?' %>
+  <%= f.input :instrument, label: 'What kind of instrument are you searching?' %>
+  <%= f.input :start_date, label: 'Start Date?' %>
+  <%= f.input :end_date, label: 'End Date?' %>
+  <%= f.input :remember_me, inline_label: 'Yes, remember me' %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
+
+<!-- CARDS LANDING PAGE -->
+<% @instruments.each do |instrument| %>
+  <%= cl_image_tag @instrument.photo.key, height: 150, width: 150, crop:fill if @instrument.photo.attached?%>
+  <p><%= instrument.city %></p>
+  <p><%= instrument.name %></p>
+  <p><%= instrument.price %></p>
+<!--   <p><%= instrument.rating %></p> -->
+<% end %>
