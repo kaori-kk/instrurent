@@ -1,4 +1,4 @@
-class CreateRequests < ActiveRecord::Migration[5.2]
+class CreateRequestsTable < ActiveRecord::Migration[5.2]
   def change
     create_table :requests do |t|
       t.date :start_date, null: false
