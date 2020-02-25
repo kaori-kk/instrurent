@@ -4,17 +4,17 @@ Rails.application.routes.draw do
 
   resources :instruments
 
-  resources :users do
-    collection do
-      # get 'path', to: 'CONTROLLER#ACTION'
-      get 'path', to: 'dashboards#all_requests'
-      get 'path', to: 'dashboards#my_requests'
-      get 'path', to: 'dashboards#profile'
+  # resources :users do
+  #   collection do
+  #     # get 'path', to: 'CONTROLLER#ACTION'
+  get 'profile/all_requests', to: 'dashboards#all_requests'
+  get 'profile/my_requests', to: 'dashboards#my_requests'
+  get 'profile', to: 'dashboards#profile'
       # get 'dashboard#all_requests'
       # get 'dashboard#my_requests'
       # get 'dashboard#profile'
-    end
-  end
+  #   end
+  # end
 
   resources :users, only: [:new, :create]
 
