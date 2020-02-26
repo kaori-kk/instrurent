@@ -1,5 +1,5 @@
  class InstrumentsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new]
   def index
     # If u have params instrument name, Instrument.where(....)
     # Else, Instrument.all
