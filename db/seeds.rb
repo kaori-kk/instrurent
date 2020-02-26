@@ -13,7 +13,7 @@ Request.destroy_all
 Instrument.destroy_all
 User.destroy_all
 
-file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 
 puts "Creating users"
 user1 = User.new({ first_name: 'Kaori', last_name: 'Kamehameha', email: "fullsupersaiyan@gmail.com", password: "123456"})
@@ -26,18 +26,20 @@ user7 = User.new({ first_name: 'Herman', last_name: 'Melville', email: "WhiteWha
 user8 = User.new({ first_name: 'Kurtis', last_name: 'Johnson', email: "K.johnson@gmail.com", password: "823456"})
 
 puts "Creating instruments"
-instrument1 = Instrument.new({user: user1, name: 'Guitar', price: 20, description: 'Nice vintage guitar'})
+instrument1 = Instrument.new({user: user1, nalme: 'Guitar', price: 20, description: 'Nice vintage guitar'})
+instrument1.photo.attach(io: asset-url('/assets/images/instrument1.png'), filename: 'file.pdf')
+
 instrument2 = Instrument.new({user: user2, name: 'Piano', price: 300, description: 'Beautiful piano made with ivory'})
-instrument3 = Instrument.new({user: user3, name: 'Bongo', price: 40, description: "Used bongo's, still produce good sound"})
+instrument3 = Instrument.new({user: user3, name: 'Guitar', price: 40, description: "Used bongo's, still produce good sound"})
 instrument4 = Instrument.new({user: user4, name: 'Bass', price: 190, description: "My unlce like to slappa da bass, thats where I got it from, but nowadays I'm busy learning to code, so I don't have much time anymore. It's a good instrument, but not much used."})
-instrument5 = Instrument.new({user: user5, name: 'Harp', price: 250, description: 'Nice vintage guitar'})
+instrument5 = Instrument.new({user: user5, name: 'Guitar', price: 250, description: 'Nice vintage guitar'})
 instrument6 = Instrument.new({user: user6, name: 'Harmonica', price: 3, description: 'I used this with my mouth.'})
-instrument7 = Instrument.new({user: user7, name: 'Cajon', price: 7, description: "It's also a nice kitchen seat"})
-instrument8 = Instrument.new({user: user8, name: 'Pan Drum', price: 80, description: 'I left my body the first time I touched this instrument'})
+instrument7 = Instrument.new({user: user7, name: 'Piano', price: 7, description: "It's also a nice kitchen seat"})
+instrument8 = Instrument.new({user: user8, name: 'Drum', price: 80, description: 'I left my body the first time I touched this instrument'})
 instrument51 = Instrument.new({user: user5, name: 'Guitar', price: 40, description: 'Nice vintage guitar'})
-instrument52 = Instrument.new({user: user5, name: 'Drums', price: 250, description: 'Used drums'})
+instrument52 = Instrument.new({user: user5, name: 'Drum', price: 250, description: 'Used drums'})
 instrument53 = Instrument.new({user: user5, name: 'Violin', price: 400, description: 'Winewood voilin made by gimli of mordor'})
-instrument54 = Instrument.new({user: user5, name: 'Panflute', price: 20, description: 'Peruvian original'})
+instrument54 = Instrument.new({user: user5, name: 'Violin', price: 20, description: 'Peruvian original'})
 puts "Here's an instrument #{instrument8.name}"
 
 
