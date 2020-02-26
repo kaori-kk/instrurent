@@ -13,6 +13,9 @@ class RequestsController < ApplicationController
     @instrument = Instrument.find(params[:instrument_id])
     @request = Request.new(request_params)
 
+    @request.user_id = current_user.id
+    @request.instrument_id = @instrument.id
+
     if @request.save
       redirect_to request_path(@request)
     else
