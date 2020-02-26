@@ -10,3 +10,36 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-bar-button {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0;
+  text-decoration: none;
+  color: black;
+  margin-right: 15px;
+}
+
+.nav-bar-button:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.nav-bar-button:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  top:100%;
+  left: 0;
+  border-radius: 3px;
+  background: black;
+  transition: .2s;
+
+}
+
+.nav-bar-button:hover:before {
+  top: -webkit-calc(100% - 3px);
+  top: calc(100% - 3px);
+}
