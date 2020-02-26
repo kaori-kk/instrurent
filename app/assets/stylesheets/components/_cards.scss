@@ -20,11 +20,15 @@
 .card-details {
   display: flex;
   justify-content: space-between;
-  margin: 0 30px;
+  margin: 10 30px;
+  padding-top: 10px;
 }
 
 .instrument-name {
   font-size: 20px;
+}
+
+.card-instument-pricing {
 }
 
 // Smallest device

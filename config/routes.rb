@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :instruments do
     resources :users, only: [:show]
+    resources :requests, only: [:new, :create]
   end
 
   resources :requests, only: [:show]
