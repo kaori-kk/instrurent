@@ -40,6 +40,7 @@ instrument53 = Instrument.new({user: user5, name: 'Violin', price: 400, descript
 instrument54 = Instrument.new({user: user5, name: 'Panflute', price: 20, description: 'Peruvian original'})
 puts "Here's an instrument #{instrument8.name}"
 
+
 puts "Creating requests"
 request1 = Request.new({user: user1, instrument: instrument1, accepted: false, start_date: Date.parse('12/9/2019'), end_date: Date.parse('19/9/2020')})
 request2 = Request.new({user: user2, instrument: instrument2, accepted: false, start_date: Date.parse('18/8/2019'), end_date: Date.parse('29/9/2020')})
