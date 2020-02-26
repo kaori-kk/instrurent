@@ -1,10 +1,14 @@
-<!-- EDIT FORM -->
-<%= simple_form_for @instrument do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit "Update", class: "btn btn-primary" %>
-<% end %>
-
+<div class="container">
+  <div class="row">
+    <div class="new col-8">
+      <%= simple_form_for @instrument do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.submit "Update", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
