@@ -12,33 +12,31 @@
 </div>
 
 <!-- CARDS LANDING PAGE -->
-<div class="container">
-  <div class="row">
-    <% @instruments.each do |instrument| %>
-    <div class="col-4">
-      <div class="card-instrument">
-        <% if instrument.photo.attached? %>
-        <%= cl_image_tag instrument.photo.key, height: 150, width: 150, crop: :fill %>
-        <% else %>
+<div class="cards-container">
+  <% @instruments.each do |instrument| %>
+    <div class="instrument-card">
+      <% if instrument.photo.attached? %>
+        <%= cl_image_tag instrument.photo.key, class: 'instrument-img', height: 200, width: 200, crop: :fill %>
+      <% else %>
         <%= image_tag 'instrument-placeholder.jpg' %>
-        <% end %>
+      <% end %>
+
+      <div class="card-details">
         <div class="card-instrument-details">
-          <div class="card-instrument-infos">
-            <%= link_to instrument.name, instrument_path(instrument) %>
-            <p>Description</p>
-            <p>
-              <%= link_to instrument_path(instrument), method: :delete do %>
-              <i class="far fa-trash-alt"></i>
-              <% end %>
-              <%= link_to edit_instrument_path(instrument), method: :get do %>
-              <i class="far fa-edit"></i>
-              <% end %>
-            </p>
-            <h2 class="card-instument-pricing"><%= instrument.price %></h2>
-          </div>
+          <%= link_to instrument.name, instrument_path(instrument) %>
+          <p><%= instrument.description %></p>
+        </div>
+
+        <div class="card-instrument-infos">
+          <%= link_to instrument_path(instrument), method: :delete do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+          <%= link_to edit_instrument_path(instrument), method: :get do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <h2 class="card-instument-pricing"><%= instrument.price %>€</h2>
         </div>
       </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
