@@ -1,15 +1,16 @@
 .cards-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 40px;
+}
+
+.instrument-card {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 16px;
-  margin-top: 50px;
 }
-
-// .card-instrument {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   grid-gap: 16px;
-// }
 
 .card-details {
   display: flex;
