@@ -1,11 +1,14 @@
 
 <div class="container">
-  <% @requests.each do |request| %>
+  <% @my_requests.each do |request| %>
   <div class="card-product">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
       <h2><%= request.instrument.name %></h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
+        <p>
+          Rented from: <strong><%= request.start_date  %>
+          till <%= request.end_date %></strong>
+        </p>
     </div>
     <% end %>
   </div>

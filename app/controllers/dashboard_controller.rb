@@ -3,12 +3,17 @@ class DashboardController < ApplicationController
 
   def my_requests
     # All requests that the current_user made
-    @requests = current_user.requests
+    @my_requests = current_user.requests
   end
 
   def all_requests
-    raise
-    @requests = Request.all
+    #Instruments belong to current user
+    profile
+    @requests = []
+    all_my_instruments = Instrument.where(user_id: @user.id)
+    all_my_instruments.each do |instrument|
+    @requests << instrument.request
+    end
     # @requests = Request.select(params[:id])
   end
 
