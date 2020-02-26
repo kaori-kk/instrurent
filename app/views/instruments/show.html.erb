@@ -3,9 +3,9 @@
   <div class="product-details row">
     <div class="product-image col-4">
       <% if @instrument.photo.attached? %>
-      <%= cl_image_tag @instrument.photo.key, height: 300, width: 300, crop: :fill %>
+      <%= cl_image_tag @instrument.photo.key, height: 300, width: 350, crop: :fill %>
       <% else %>
-      <%= image_tag 'instrument-placeholder.jpg' %>
+      <%= image_tag 'instrument-placeholder.jpg', class: "default-img"%>
       <% end %>
     </div>
     <div class="product-info col-8">
@@ -20,14 +20,16 @@
     <div class="back">
       <%= link_to "Back", instruments_path %>
     </div>
-    <div class="action">
-      <%= link_to instrument_path(@instrument), method: :delete do %>
-      <i class="far fa-trash-alt"></i>
-      <% end %>
-      <%= link_to edit_instrument_path(@instrument), method: :get do %>
-      <i class="far fa-edit"></i>
-      <% end %>
-    </div>
+    <% if current_user == @instrument.user %>
+      <div class="action">
+        <%= link_to edit_instrument_path(@instrument), method: :get do %>
+        <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to instrument_path(@instrument), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
 <!--   <div class="comments row">

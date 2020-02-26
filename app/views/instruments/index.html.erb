@@ -19,7 +19,7 @@
       <% if instrument.photo.attached? %>
         <%= cl_image_tag instrument.photo.key, class: 'instrument-img', height: 200, width: 350, crop: :fill %>
       <% else %>
-        <%= image_tag 'instrument-placeholder.jpg', height: 200, width: 350, crop: :fill %>
+        <%= image_tag 'instrument-placeholder.jpg', class: 'instrument-img' %>
       <% end %>
 
       <div class="card-details">
@@ -29,12 +29,6 @@
         </div>
 
         <div class="card-instrument-infos">
-          <%= link_to instrument_path(instrument), method: :delete do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
-          <%= link_to edit_instrument_path(instrument), method: :get do %>
-            <i class="far fa-edit"></i>
-          <% end %>
           <h2 class="card-instument-pricing"><%= instrument.price %>€</h2>
         </div>
       </div>
