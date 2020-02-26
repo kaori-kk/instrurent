@@ -1,8 +1,16 @@
-<!-- NEW FORM -->
-<%= simple_form_for @instrument do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Add Instrument", class: "btn btn-primary" %>
-<% end %>
+<div class="banner-owner">
+    <div class="form-owner-container bg-white color-white">
+      <%= simple_form_for @instrument do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Add Instrument", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+</div>
+
+
+
+
+

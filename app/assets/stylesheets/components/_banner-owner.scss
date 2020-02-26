@@ -1,0 +1,14 @@
+.banner-owner {
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), asset-url('owner-background.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.form-owner-container {
+  margin-left: 65vw;
+}
