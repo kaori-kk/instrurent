@@ -11,12 +11,13 @@
 </head>
 <body>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="search-form">
     <%= link_to image_tag("guitar.jpg"), instruments_path, class: 'navbar-brand'%>
-
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <input type="search" name="example2" size="30" maxlength="30" autofocus placeholder="Search">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+    </button>
+    </div>
 
 
 
@@ -35,10 +36,10 @@
       </li>
       <% else %>
       <li class="nav-item">
-        <%= link_to "Log in", user_session_path %>
+        <%= link_to "Log in", user_session_path, class: 'nav-bar-button' %>
       </li>
       <li class="nav-item">
-        <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to "Sign Up", new_user_registration_path, class: 'nav-bar-button' %>
       </li>
       <% end %>
 
