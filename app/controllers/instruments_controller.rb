@@ -17,24 +17,39 @@
     @instrument = Instrument.new(instrument_params)
     @instrument.user = current_user
     if @instrument.save
-        redirect_to instruments_path(@instrument)
+      redirect_to instruments_path(@instrument)
     else
       render :new
     end
   end
 
   def edit
-    @instrument = Instrument.find(params[:id])
+    if (current_user == @instrument.user)
+      @instrument = Instrument.find(params[:id])
+    else
+      flash[:notice] = 'You are not authorized to do this.'
+      redirect_to instruments_path
+    end
   end
 
   def update
-    @instrument = Instrument.find(params[:id])
+    if (current_user == @instrument.user)
+      @instrument = Instrument.find(params[:id])
+    else
+      flash[:notice] = 'You are not authorized to do this.'
+      redirect_to instruments_path
+    end
     @instrument.update(instrument_params)
     redirect_to instrument_path(@instrument)
   end
 
   def destroy
-    @instrument = Instrument.find(params[:id])
+    if (current_user == @instrument.user)
+      @instrument = Instrument.find(params[:id])
+    else
+      flash[:notice] = 'You are not authorized to do this.'
+      redirect_to instruments_path
+    end
     @instrument.destroy
     redirect_to instruments_path
   end
