@@ -1,13 +1,16 @@
 <!-- SEARCH FORM LANDING PAGE -->
 <div class="banner">
-  <div class="form-container bg-white color-white">
-    <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
-    <%#= f.input :where, label: 'Where are you searching?' %>
-    <%= f.input :name, label: 'What kind of instrument are you searching?' %>
-    <%#= f.input :start_date, label: 'Start Date?' %>
-    <%#= f.input :end_date, label: 'End Date?' %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-    <% end %>
+  <div class="banner-container">
+    <h2>Play your music<br>Anywhere<br>Anytime</h2>
+      <div class="form-container bg-white color-white">
+        <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
+        <%#= f.input :where, label: 'Where are you searching?' %>
+        <%= f.input :name, label: 'What kind of instrument are you searching?' %>
+        <%#= f.input :start_date, label: 'Start Date?' %>
+        <%#= f.input :end_date, label: 'End Date?' %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
   </div>
 </div>
 <!-- https://upload.wikimedia.org/wikipedia/commons/8/8b/20131205_Istanbul_321_cropped.jpg -->
