@@ -19,7 +19,7 @@
       <% if instrument.photo.attached? %>
         <%= cl_image_tag instrument.photo.key, class: 'instrument-img', height: 200, width: 350, crop: :fill %>
       <% else %>
-        <%= image_tag 'instrument-placeholder.jpg', height: 200, width: 350, crop: :fill %>
+        <%= image_tag 'instrument-placeholder.jpg', class: 'instrument-img' %>
       <% end %>
 
       <div class="card-details">
