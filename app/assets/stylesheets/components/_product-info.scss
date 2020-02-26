@@ -15,6 +15,7 @@
 }
 
 .product-info {
+  // display: flex;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding-right: 20px;
@@ -34,7 +35,8 @@
     }
 
     .btn {
-      text-align: right;
+      // align-self: flex-end;
+      // align-items: flex-end;
     }
 }
 
