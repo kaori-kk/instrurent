@@ -5,11 +5,19 @@ class RequestsController < ApplicationController
   end
 
   def new
+    @instrument = Instrument.find(params[:instrument_id])
     @request = Request.new
   end
 
   def create
+    @instrument = Instrument.find(params[:instrument_id])
     @request = Request.new(request_params)
+
+    if @request.save
+      redirect_to request_path(@request)
+    else
+      render :new
+    end
   end
 
   private

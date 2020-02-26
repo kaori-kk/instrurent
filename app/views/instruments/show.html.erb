@@ -12,7 +12,7 @@
       <h2><%= @instrument.name %></h2>
       <p><%= @instrument.description %></p>
       <h2 class="price"><%= @instrument.price %>€</h2>
-      <%= link_to "Book Now", instrument_requests_path(@instrument), method: :post, class: "btn btn-primary" %>
+      <%= link_to "Book Now", new_instrument_request_path(@instrument), class: "btn btn-primary" %>
     </div>
   </div>
 
