@@ -1,14 +1,12 @@
 .banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), asset-url('background.jpg');
   background-size: cover;
   background-position: center;
   width: 100vw;
   height: 100vh;
-  opacity: 0.5;
   margin: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-
 }
 
 .banner h1 {
@@ -28,6 +26,7 @@
 
 .form-container {
   padding: 30 80;
+  margin-left: 70px;
 }
 
 .simple_form {

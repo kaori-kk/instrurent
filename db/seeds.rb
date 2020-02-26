@@ -18,6 +18,7 @@ file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419
 teaching_t = User.find(2)
 puts teaching_t.first_name
 
+
 instrument1 = Instrument.new({name: "Piano"})
 instrument2 = Instrument.new({name: "Drums"})
 guitar = Instrument.new({ name: 'Guitar', price: 20, description: 'Nice vintage guitar'})
