@@ -1,8 +1,9 @@
-<!-- NEW FORM -->
+<h1>Add a New Instrument</h1>
 <%= simple_form_for @instrument do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Add Instrument", class: "btn btn-primary" %>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.input :price %>
+<%= f.input :photo, as: :file %>
+<%= f.submit "Add Instrument", class: "btn btn-primary" %>
 <% end %>
+
