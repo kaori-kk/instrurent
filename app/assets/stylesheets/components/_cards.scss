@@ -27,27 +27,26 @@
 }
 
 .instrument-name {
-
   font-size: 32px;
   color: black;
   text-decoration: none;
-
-.instrument-name:hover {
-  text-decoration :none;
-
 }
 
-.card-instrument-infos {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.card-instrument-details {
-  p {
-    font-size: 15px;
+  .instrument-name:hover {
+    text-decoration :none;
   }
-}
+
+  .card-instrument-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .card-instrument-details {
+    p {
+      font-size: 15px;
+    }
+  }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -83,4 +82,3 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-

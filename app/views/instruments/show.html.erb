@@ -9,28 +9,32 @@
       <% end %>
     </div>
     <div class="product-info col-8">
-      <h2><%= @instrument.name %></h2>
-      <p><%= @instrument.description %></p>
-      <h2 class="price"><%= @instrument.price %>€</h2>
-      <%= link_to "Book Now", new_instrument_request_path(@instrument), class: "btn btn-primary" %>
-    </div>
-  </div>
-
-  <div class="links row">
-    <div class="back">
-      <%= link_to "Back", instruments_path %>
-    </div>
-    <% if current_user == @instrument.user %>
-      <div class="action">
-        <%= link_to edit_instrument_path(@instrument), method: :get do %>
-        <i class="far fa-edit"></i>
-        <% end %>
-        <%= link_to instrument_path(@instrument), method: :delete do %>
-        <i class="far fa-trash-alt"></i>
-        <% end %>
+      <div class="product-details">
+        <h2><%= @instrument.name %></h2>
+        <p><%= @instrument.description %></p>
+        <h2 class="price"><%= @instrument.price %>€</h2>
       </div>
+
+      <div class="book">
+        <%= link_to "Book Now", new_instrument_request_path(@instrument), class: "btn btn-primary" %>
+     </div>
+ </div>
+
+ <div class="links row">
+  <div class="back">
+    <%= link_to "Back", instruments_path %>
+  </div>
+  <% if current_user == @instrument.user %>
+  <div class="action">
+    <%= link_to edit_instrument_path(@instrument), method: :get do %>
+    <i class="far fa-edit"></i>
+    <% end %>
+    <%= link_to instrument_path(@instrument), method: :delete do %>
+    <i class="far fa-trash-alt"></i>
     <% end %>
   </div>
+  <% end %>
+</div>
 
 <!--   <div class="comments row">
     <div class="user">
