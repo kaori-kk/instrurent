@@ -11,11 +11,9 @@ class DashboardController < ApplicationController
     @user = current_user
     @requests = []
     all_my_instruments = Instrument.where(user_id: @user.id)
-
     all_my_instruments.each do |instrument|
     @requests << instrument.requests if instrument.requests != nil
     end
-
     @requests.flatten!
   end
 
