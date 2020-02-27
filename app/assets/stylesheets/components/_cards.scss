@@ -20,22 +20,34 @@
 
 .card-details {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 10 30px;
   padding-top: 10px;
 }
 
 .instrument-name {
-  font-size: 20px;
+  font-size: 32px;
   color: black;
+  text-decoration: none;
   font-weight: bold;
 }
 
 .instrument-name:hover {
   text-decoration :none;
+
 }
 
-.card-instument-pricing {
+.card-instrument-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card-instrument-details {
+  p {
+    font-size: 15px;
+  }
 }
 
 // Smallest device

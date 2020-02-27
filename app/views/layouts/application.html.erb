@@ -52,9 +52,11 @@
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <%= yield %>
+  <main>
+    <%= yield %>
+  </main>
 
-<div class="footer">
+<footer class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -63,7 +65,7 @@
   <div class="footer-copyright">
     This footer is made with <i class="fas fa-heart"></i> at Intrurent!
   </div>
-</div>
+</footer>
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
