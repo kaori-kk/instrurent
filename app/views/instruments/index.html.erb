@@ -1,11 +1,11 @@
 <!-- SEARCH FORM LANDING PAGE -->
 <div class="banner">
   <div class="banner-container">
-    <h2><strong>Play your music</strong><br>Anywhere. Anytime</h2>
+    <h2><strong>Play your music</strong><br>Anywhere. Anytime.</h2>
       <div class="form-container bg-white color-white">
         <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
         <%#= f.input :where, label: 'Where are you searching?' %>
-        <%= f.input :name, label: 'What kind of instrument are you searching?' %>
+        <%= f.input :name, label: 'What kind of instrument are you searching for?' %>
         <%= f.input :start_date, as: :date, label: 'Start Date?', html5: true %>
         <%= f.input :end_date, as: :date, label: 'End Date?', html5: true %>
         <%= f.submit "Search", class: "btn btn-primary" %>
