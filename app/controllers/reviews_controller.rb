@@ -5,10 +5,10 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(instrument_params)
+    @review = Review.new(review_params)
     @review.user = current_user
     if @review.save
-      redirect_to instruments_path(@instrument)
+      redirect_to request_reviews_path(@review)
     else
       render :new
     end
@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
     require_owner!(@review)
 
     @review.update(review_params)
-    redirect_to instrument_path(@instrument)
+    redirect_to request_reviews_path(@review)
   end
 
   def destroy
@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
     require_owner!(@review)
 
     @review.destroy
-    redirect_to instruments_path
+    redirect_to request_reviews_path
   end
 
   private
@@ -44,7 +44,7 @@ class ReviewsController < ApplicationController
   def require_owner!(review)
     if (current_user != instrument.user)
       flash[:notice] = 'You are not authorized to do this.'
-      redirect_to instruments_path
+      redirect_to request_reviews_path
     end
   end
 
