@@ -23,6 +23,21 @@ class RequestsController < ApplicationController
     end
   end
 
+    def accept
+    @request = Request.find(params[:id])
+    @request.status = 'accepted'
+    @request.save
+    redirect_to profile_path
+  end
+
+
+  def decline
+    @request = Request.find(params[:id])
+    @request.status = 'declined'
+    @request.save
+    redirect_to profile_path
+  end
+
   private
 
   def request_params

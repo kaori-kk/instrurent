@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
     @requests = []
     all_my_instruments = Instrument.where(user_id: @user.id)
     all_my_instruments.each do |instrument|
-    @requests << instrument.requests if instrument.requests != nil
+    @requests << instrument.request if instrument.request != nil
     end
     @requests.flatten!
   end
@@ -38,7 +38,7 @@ class DashboardController < ApplicationController
 
   def decline
     @request = Request.find(params[:id])
-    @request.accepted = 'declined'
+    @request.status = 'declined'
     @request.save
     redirect_to profile_path
   end
