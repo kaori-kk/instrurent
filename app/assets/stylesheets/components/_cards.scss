@@ -10,6 +10,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 16px;
   width: 85%;
+  border-radius: 15px;
 }
 
 .instrument-img {
@@ -26,6 +27,12 @@
 
 .instrument-name {
   font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.instrument-name:hover {
+  text-decoration :none;
 }
 
 .card-instument-pricing {
