@@ -1,16 +1,31 @@
 <div class="banner-owner">
   <div class="banner-owner-container">
-    <h2 id="rent_instrument"><strong>Untouched Instrument?</strong><br>Rent it. Share it.</h2>
+    <h2 id="rent_instrument"><strong>Got an Instrument?</strong><br>Rent it. Share it.</h2>
     <div class="form-owner-container bg-white color-white">
       <%= simple_form_for @instrument do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :price %>
       <%= f.input :photo, as: :file %>
-      <%= f.submit "Add Instrument", class: "btn btn-primary" %>
+      <%= f.submit "Add Instrument", class: "btn btn-dark" %>
       <% end %>
     </div>
   </div>
+</div>
+
+<div class="explanation">
+  <div class="messages">
+    <h2>Do you have an instrument you don't use anymore?</h2>
+    <h3>Why not <strong>share</strong> with others and <strong>earn</strong> profit?</h3>
+  </div>
+  <div class="messages-img">
+    <img src="/app/assets/images/piano2.png" alt="">
+  </div>
+
+  <div class="messages2">
+    <h2>Easy to rent your instrument</h2>
+  </div>
+
 </div>
 
 
