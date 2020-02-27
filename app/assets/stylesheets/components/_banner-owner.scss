@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   background-position: -50px -20px;
+  margin-bottom: 80px;
 }
 
 .form-owner-container {
@@ -26,22 +27,33 @@
  float: right;
 }
 
-.explanation {
-  width: 70vw;
-  margin: 0 auto;
+
+.messages h2 {
+  font-size: 30px;
 }
 
-.container1 {
+h3{
+  font-size: 20px;
+}
+
+.message-container {
   display: flex;
-  margin-top: 80px;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+  margin: auto;
 }
 
-.container2 {
-  display: flex;
-  margin-top: 50px;
+.messages {
+  width: 40%;
 }
 
-#message-h2-tag {
-  margin-left: 50px;
+.messages-img {
+  width: 40%;
 }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
+
+}
+
