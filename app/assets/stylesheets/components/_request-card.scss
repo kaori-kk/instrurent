@@ -5,6 +5,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 34px;
+  position: relative;
 }
 
 .card-product img {
@@ -29,4 +31,23 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.card-checkbox {
+  position: absolute;
+  top: 16px;
+  right: 1px;
+  padding: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+#accept:hover {
+  opacity: 0.8;
+}
+
+#decline:hover {
+  opacity: 0.8;
 }

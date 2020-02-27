@@ -1,6 +1,7 @@
 class Instrument < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
+
   has_many :request
 
   include PgSearch::Model
@@ -9,4 +10,5 @@ class Instrument < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
 end
