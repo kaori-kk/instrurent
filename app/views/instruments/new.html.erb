@@ -1,5 +1,6 @@
-
 <div class="banner-owner">
+  <div class="banner-owner-container">
+    <h2 id="rent_instrument"><strong>Untouched Instrument?</strong><br>Rent it. Share it.</h2>
     <div class="form-owner-container bg-white color-white">
       <%= simple_form_for @instrument do |f| %>
       <%= f.input :name %>
@@ -9,6 +10,7 @@
       <%= f.submit "Add Instrument", class: "btn btn-primary" %>
       <% end %>
     </div>
+  </div>
 </div>
 
 
