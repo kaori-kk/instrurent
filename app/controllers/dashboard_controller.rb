@@ -19,8 +19,11 @@ class DashboardController < ApplicationController
     @requests.flatten!
   end
 
+
   def profile
     @user = current_user
+    my_requests
+    all_requests
   end
 
   def request_accepted?
