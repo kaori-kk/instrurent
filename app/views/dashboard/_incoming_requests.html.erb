@@ -1,26 +1,30 @@
 <div class="container">
   <div class="col mb-5">
     <div class="mb-50">
-  <% @requests.each do |request| %>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <% @requests.each do |request| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
           <h2><%= request.instrument.name %></h2>
-            <p>Date: <strong><%= request.start_date %> till <%= request.end_date %></strong></p>
-            <p><%= request.user.first_name%> want's to rent your instrument</p>
-            <div class="card-checkbox">
-              <ul>
+          <p>Date: <strong><%= request.start_date %> till <%= request.end_date %></strong></p>
+          <p><%= request.user.first_name%> want's to rent your instrument</p>
+          <div class="card-checkbox">
+            <ul>
               <li>
                 <%= link_to accept_request_path(request), method: :post do  %>
-                  <i id="accept" class="fa fa-check">Accept</i></li>
-                <% end %>
-
-              <li><i id="decline" class="fas fa-ban">Decline</i></li>
-              </ul>
-            </div>
+                <i id="accept" class="fa fa-check">Accept</i>
+              </li>
+              <% end %>
+              <li>
+                <%= link_to decline_request_path(request), method: :post do  %>
+                <i id="decline" class="fas fa-ban">Decline</i>
+              </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
-    <% end %>
-    </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
