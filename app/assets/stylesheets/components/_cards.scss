@@ -1,7 +1,7 @@
 .cards-container {
   margin-top: 50px;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 25px;
   margin: 50px;
 }
 
@@ -9,7 +9,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 16px;
-  width: 100%;
+  width: 85%;
+  border-radius: 15px;
 }
 
 .instrument-img {
@@ -19,17 +20,41 @@
 
 .card-details {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 10 30px;
   padding-top: 10px;
 }
 
 .instrument-name {
-  font-size: 20px;
+  font-size: 32px;
+  color: black;
+  text-decoration: none;
+
+  font-weight: bold;
 }
 
-.card-instument-pricing {
+.instrument-name:hover {
+  text-decoration :none;
+
+
 }
+
+  .instrument-name:hover {
+    text-decoration :none;
+  }
+
+  .card-instrument-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .card-instrument-details {
+    p {
+      font-size: 15px;
+    }
+  }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -65,4 +90,3 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
