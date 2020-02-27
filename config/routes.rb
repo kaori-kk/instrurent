@@ -23,7 +23,8 @@ Rails.application.routes.draw do
 
   resources :requests, only: [:show] do
     member do
-      get '/accept', to: 'dashboard#accept_request'
+      post 'accept'
+      post 'decline'
     end
   end
 end

@@ -27,10 +27,19 @@ class DashboardController < ApplicationController
     @requests.accepted
   end
 
-  def accept_request
-    request = Request.find(params[:request_id])
-    request.accepted = true
-    request.save
+  # POST /requests/:id/accept
+  def accept
+    @request = Request.find(params[:id])
+    @request.accepted = 'accepted'
+    @request.save
+    redirect_to profile_path
+  end
+
+  def decline
+    @request = Request.find(params[:id])
+    @request.accepted = 'declined'
+    @request.save
+    redirect_to profile_path
   end
 
 end

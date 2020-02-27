@@ -53,18 +53,24 @@
      <div class="col-xs-12 divider text-center d-flex">
       <div class="col-xs-12 col-sm-4 emphasis">
         <h2><strong>+</strong></h2>
-        <p><small>Create advertise</small></p>
-        <button class="btn btn-primary btn-block"><span class="fa fa-plus-square"></span> Rent out </button>
+        <p><small>List instrument</small></p>
+        <%= button_to "Create", new_instrument_path,
+      :class => "btn btn-primary", :method => :get %>
+       <!--  <button class="btn btn-primary btn-block"><span class="fa fa-plus-square"></span> Create </button>
+ -->      </div>
+      <div class="col-xs-12 col-sm-4 emphasis">
+        <h2><strong><%= current_user.outgoing_requests.count %></strong></h2>
+        <p><small>Requests</small></p>
+        <%= button_to "Outgoing", profile_my_requests_path,
+      :class => "btn btn-success", :method => :get %>
+        <!-- <button class="btn btn-success btn-block" ><span class="fa fa-user-square"></span> Outgoing </button> -->
       </div>
       <div class="col-xs-12 col-sm-4 emphasis">
         <h2><strong><%= current_user.requests.count %></strong></h2>
         <p><small>Requests</small></p>
-        <button class="btn btn-success btn-block"><span class="fa fa-user-square"></span> Outgoing </button>
-      </div>
-      <div class="col-xs-12 col-sm-4 emphasis">
-        <h2><strong>2</strong></h2>
-        <p><small>Requests</small></p>
-        <button class="btn btn-info btn-block"><span class="fa fa-user-square"></span> Incoming </button>
+        <%= button_to "Incoming", profile_all_requests_path,
+      :class => "btn btn-info", :method => :get %>
+        <!-- <button class="btn btn-info btn-block"><span class="fa fa-user-square"></span> Incoming </button> -->
       </div>
     </div>
   </div>

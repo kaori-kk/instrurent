@@ -10,7 +10,11 @@
             <p><%= request.user.first_name%> want's to rent your instrument</p>
             <div class="card-checkbox">
               <ul>
-              <li><i id="accept" class="fa fa-check">Accept</i></li>
+              <li>
+                <%= link_to accept_request_path(request), method: :post do  %>
+                  <i id="accept" class="fa fa-check">Accept</i></li>
+                <% end %>
+
               <li><i id="decline" class="fas fa-ban">Decline</i></li>
               </ul>
             </div>
