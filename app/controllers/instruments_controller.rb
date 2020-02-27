@@ -1,9 +1,11 @@
  class InstrumentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
   def index
-    # If u have params instrument name, Instrument.where(....)
-    # Else, Instrument.all
-    @instruments = Instrument.all
+    if params[:instrument].present?
+        @instruments = Instrument.basic_search(params[:instrument][:name])
+    else
+     @instruments = Instrument.all
+    end
   end
 
   def show

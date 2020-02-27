@@ -6,8 +6,8 @@
         <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
         <%#= f.input :where, label: 'Where are you searching?' %>
         <%= f.input :name, label: 'What kind of instrument are you searching?' %>
-        <%#= f.input :start_date, label: 'Start Date?' %>
-        <%#= f.input :end_date, label: 'End Date?' %>
+        <%= f.input :start_date, as: :date, label: 'Start Date?', html5: true %>
+        <%= f.input :end_date, as: :date, label: 'End Date?', html5: true %>
         <%= f.submit "Search", class: "btn btn-primary" %>
         <% end %>
       </div>
