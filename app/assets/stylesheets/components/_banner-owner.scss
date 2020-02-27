@@ -9,9 +9,6 @@
   background-position: -50px -20px;
 }
 
-
-
-
 .form-owner-container {
   margin-left: 65vw;
 
@@ -27,4 +24,24 @@
 
 .btn {
  float: right;
+}
+
+.explanation {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.container1 {
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+}
+
+.container2 {
+  display: flex;
+  margin-top: 50px;
+}
+
+#message-h2-tag {
+  margin-left: 50px;
 }
