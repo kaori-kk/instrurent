@@ -49,7 +49,8 @@ request4 = Request.new({user: user4, instrument: instrument4, accepted: false, s
 request5 = Request.new({user: user5, instrument: instrument5, accepted: false, start_date: Date.parse('7/12/2019'), end_date: Date.parse('11/6/2020')})
 request6 = Request.new({user: user6, instrument: instrument6, accepted: false, start_date: Date.parse('14/4/2019'), end_date: Date.parse('12/5/2020')})
 request7 = Request.new({user: user7, instrument: instrument7, accepted: false, start_date: Date.parse('16/1/2019'), end_date: Date.parse('12/3/2020')})
-request8 = Request.new({user: user8, instrument: instrument8, accepted: false, start_date: Date.parse('9/9/2019'), end_date: Date.parse('12/2/2020')})
+request8 = Request.new({user: user5, instrument: instrument8, accepted: true, start_date: Date.parse('9/9/2019'), end_date: Date.parse('12/2/2020')})
+puts "the pan drum is #{request8.accepted}"
 
 instrument1.save
 instrument2.save

@@ -13,7 +13,11 @@
               till <%= request.end_date %></strong>
             </p>
             <p>Owners name: <%= request.instrument.user.first_name%></p>
-
+            <% if request.accepted == true %>
+            <p>Request accepted</p>
+            <% else %>
+            <p>Pending</p>
+            <% end %>
         </div>
     </div>
     <% end %>

@@ -22,4 +22,15 @@ class DashboardController < ApplicationController
   def profile
     @user = current_user
   end
+
+  def request_accepted?
+    @requests.accepted
+  end
+
+  def accept_request
+    request = Request.find(params[:request_id])
+    request.accepted = true
+    request.save
+  end
+
 end
