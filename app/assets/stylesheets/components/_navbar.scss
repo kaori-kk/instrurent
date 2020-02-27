@@ -11,6 +11,12 @@
   width: 40px;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+}
+
 
 .dropdown-menu {
   background-color: white;
@@ -47,4 +53,11 @@
   top: -webkit-calc(100% - 3px);
   top: calc(100% - 3px);
 
+}
+
+.notice {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFF9;
+  float: left;
 }
