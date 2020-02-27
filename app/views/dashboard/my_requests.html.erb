@@ -1,15 +1,22 @@
 
 <div class="container">
+  <div class="col mb-5">
+    <div class="mb-50">
+
   <% @my_requests.each do |request| %>
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2><%= request.instrument.name %></h2>
-        <p>
-          Rented from: <strong><%= request.start_date  %>
-          till <%= request.end_date %></strong>
-        </p>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= request.instrument.name %></h2>
+            <p>
+              Date: <strong><%= request.start_date  %>
+              till <%= request.end_date %></strong>
+            </p>
+            <p>Owners name: <%= request.instrument.user.first_name%></p>
+
+        </div>
     </div>
     <% end %>
+    </div>
   </div>
 </div>
