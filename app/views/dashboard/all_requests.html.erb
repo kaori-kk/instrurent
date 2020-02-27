@@ -8,9 +8,15 @@
           <h2><%= request.instrument.name %></h2>
             <p>Date: <strong><%= request.start_date %> till <%= request.end_date %></strong></p>
             <p><%= request.user.first_name%> want's to rent your instrument</p>
+            <div class="card-checkbox">
+              <ul>
+              <li><i id="accept" class="fa fa-check">Accept</i></li>
+              <li><i id="decline" class="fas fa-ban">Decline</i></li>
+              </ul>
+            </div>
         </div>
-    </div>
     <% end %>
+    </div>
     </div>
   </div>
 </div>
