@@ -17,35 +17,39 @@
 
       <div class="book">
         <%= link_to "Book Now", new_instrument_request_path(@instrument), class: "btn btn-primary" %>
-     </div>
- </div>
-
- <div class="links row">
-  <div class="back">
-    <%= link_to "Back", instruments_path %>
-  </div>
-  <% if current_user == @instrument.user %>
-  <div class="action">
-    <%= link_to edit_instrument_path(@instrument), method: :get do %>
-    <i class="far fa-edit"></i>
-    <% end %>
-    <%= link_to instrument_path(@instrument), method: :delete do %>
-    <i class="far fa-trash-alt"></i>
-    <% end %>
-  </div>
-  <% end %>
-</div>
-
-<!--   <div class="comments row">
-    <div class="user">
-      <p>AVATAR</p>
+      </div>
     </div>
-    <div class="comment">
-      <p>Comment</p>
-    </div>
-  </div> -->
 
-</div>
+    <div class="links row">
+      <div class="back">
+        <%= link_to "Back", instruments_path %>
+      </div>
+      <% if current_user == @instrument.user %>
+      <div class="action">
+        <%= link_to edit_instrument_path(@instrument), method: :get do %>
+        <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to instrument_path(@instrument), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+
+    <% if @instrument.reviews.any? %>
+    <div class="product-info col-8">
+      <% @instrument.reviews.each do |review| %>
+      <p><%= review.instrument_review %></p>
+      <p><%= review.instrument_stars%></p>
+      <% end %>
+    </div>
+    <%else %>
+    <div>
+      <p>no reviews</p>
+    </div>
+    <%end %>
+
+  </div>
 
 
 

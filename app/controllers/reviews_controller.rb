@@ -1,51 +1,31 @@
 class ReviewsController < ApplicationController
-
   def new
     @review = Review.new
+    @request = Request.find(params[:request_id])
   end
 
   def create
     @review = Review.new(review_params)
-    @review.user = current_user
-    if @review.save
-      redirect_to request_reviews_path(@review)
+    @request = Request.find(params[:request_id])
+    if current_user.id == @request.user_id
+      @review.request = @request
+      if @review.save
+        redirect_to instrument_path(@review.request.instrument)
+      else
+        render :new
+      end
     else
-      render :new
+      flash[:notice] = 'You are not authorized to do this.'
+      redirect_back(fallback_location: root_path)
     end
-  end
-
-  def edit
-    @review = Review.find(params[:id])
-    require_owner!(@review)
-  end
-
-  def update
-    @review = Review.find(params[:id])
-    require_owner!(@review)
-
-    @review.update(review_params)
-    redirect_to request_reviews_path(@review)
-  end
-
-  def destroy
-    @review = Instrument.find(params[:id])
-    require_owner!(@review)
-
-    @review.destroy
-    redirect_to request_reviews_path
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:request_id, :user_stars, :user:review, :intrument_stars, :instrument_review)
-  end
-
-  def require_owner!(review)
-    if (current_user != instrument.user)
-      flash[:notice] = 'You are not authorized to do this.'
-      redirect_to request_reviews_path
-    end
+    params.require(:review).permit(:intrument_stars, :instrument_review)
   end
 
 end
+
+
