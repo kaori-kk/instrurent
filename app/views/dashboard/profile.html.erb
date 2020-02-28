@@ -56,23 +56,23 @@
       <div class="col-xs-12 col-sm-4 emphasis">
         <h2><strong>+</strong></h2>
         <p><small>List instrument</small></p>
-        <%= button_to "Create", new_instrument_path,
-      :class => "btn btn-primary", :method => :get %>
+        <%= link_to "Create", new_instrument_path,
+      class: "btn btn-primary"%>
        <!--  <button class="btn btn-primary btn-block"><span class="fa fa-plus-square"></span> Create </button>
  -->      </div>
       <div class="col-xs-12 col-sm-4 emphasis">
         <h2><strong><%= current_user.outgoing_requests.count %></strong></h2>
         <p><small>Requests</small></p>
-        <%= link_to "Outgoing", profile_path(collapse: params[:collapse] != 'true'),
-      :class => "btn btn-success", :method => :get %>
+        <%= link_to "Outgoing", profile_path(collapse: params[:collapse] == 'Outgoing' ? 'false' : 'Outgoing'),
+      class: "btn btn-success"%>
 
         <!-- <button class="btn btn-success btn-block" ><span class="fa fa-user-square"></span> Outgoing </button> -->
       </div>
       <div class="col-xs-12 col-sm-4 emphasis">
         <h2><strong><%= current_user.requests.count %></strong></h2>
         <p><small>Requests</small></p>
-        <%= link_to "Incoming", profile_path(collapse: params[:collapse] != 'true'),
-      :class => "btn btn-info", :method => :get %>
+        <%= link_to "Incoming", profile_path(collapse: params[:collapse] == 'Incoming' ? 'false' : 'Incoming'),
+      class: "btn btn-info"%>
         <!-- <button class="btn btn-info btn-block"><span class="fa fa-user-square"></span> Incoming </button> -->
       </div>
     </div>
@@ -80,12 +80,12 @@
 </div>
 </div>
 <div style="margin-top: 50px;">
-<% if params[:collapse] == 'true' %>
+<% if params[:collapse] == 'Outgoing' %>
   <%= render 'request_list', my_requests: @my_requests %>
 <% end %>
 </div>
 <div style="margin-top: 50px;">
-<% if params[:collapse] == 'true' %>
+<% if params[:collapse] == 'Incoming' %>
   <%= render 'incoming_requests', requests: @requests %>
 <% end %>
 </div>

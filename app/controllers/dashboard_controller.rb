@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
     #Instruments belong to current user
     @user = current_user
     @requests = []
-    all_my_instruments = Instrument.where(user_id: @user.id)
+    all_my_instruments = Instrument.where(user: @user)
     all_my_instruments.each do |instrument|
     @requests << instrument.request if instrument.request != nil
     end
