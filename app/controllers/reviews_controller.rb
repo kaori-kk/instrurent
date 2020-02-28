@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
         render :new
       end
     else
-      flash[:notice] = 'You are not authorized to do this.'
+      # flash[:notice] = 'You are not authorized to do this.'
       redirect_back(fallback_location: root_path)
     end
   end
