@@ -1,6 +1,7 @@
 <div class="container">
 
   <div class="product-details row">
+
     <div class="product-image col-4">
       <% if @instrument.photo.attached? %>
       <%= cl_image_tag @instrument.photo.key, height: 300, width: 350, crop: :fill %>
@@ -8,44 +9,56 @@
       <%= image_tag 'instrument-placeholder.jpg', class: "default-img"%>
       <% end %>
     </div>
+
     <div class="product-info col-8">
       <div class="product-details">
         <h2><%= @instrument.name %></h2>
         <p><%= @instrument.description %></p>
         <h2 class="price"><%= @instrument.price %>€</h2>
       </div>
+    </div>
 
-      <div class="book">
+      <div class="book" col-8>
         <%= link_to "Book Now", new_instrument_request_path(@instrument), class: "btn btn-primary" %>
-     </div>
- </div>
+      </div>
 
- <div class="links row">
-  <div class="back">
-    <%= link_to "Back", instruments_path %>
-  </div>
-  <% if current_user == @instrument.user %>
-  <div class="action">
-    <%= link_to edit_instrument_path(@instrument), method: :get do %>
-    <i class="far fa-edit"></i>
-    <% end %>
-    <%= link_to instrument_path(@instrument), method: :delete do %>
-    <i class="far fa-trash-alt"></i>
-    <% end %>
-  </div>
-  <% end %>
-</div>
+    <div class="links row col-8">
+      <div class="back">
+        <%= link_to "<< Back", instruments_path %>
+      </div>
 
-<!--   <div class="comments row">
-    <div class="user">
-      <p>AVATAR</p>
+
+      <div class="action">
+        <% if current_user == @instrument.user %>
+        <%= link_to edit_instrument_path(@instrument), method: :get do %>
+        <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to instrument_path(@instrument), method: :delete do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <% end %>
     </div>
-    <div class="comment">
-      <p>Comment</p>
-    </div>
-  </div> -->
 
-</div>
+    <div class="instrument-reviews col-8">
+      <div class="any-reviews">
+        <% if @instrument.reviews.any? %>
+        <% @instrument.reviews.each do |review| %>
+        <p><%= review.instrument_review %></p>
+        <p><%= review.instrument_stars%></p>
+        <% end %>
+      </div>
+
+      <div class="no-reviews">
+        <%else %>
+        <p>There are no reviews for this instrument yet.<br><strong>Be the first!</strong></p>
+        <%end %>
+      </div>
+
+    </div>
+  </div>
+
+
 
 
 

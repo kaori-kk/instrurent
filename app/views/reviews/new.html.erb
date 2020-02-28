@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="form new col-8 offset-2 bg-white color-white">
+      <%= simple_form_for [@request, @review] do |f| %>
+      <%= f.input :instrument_review %>
+      <%= f.input :instrument_stars %>
+      <%= f.submit "Review", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

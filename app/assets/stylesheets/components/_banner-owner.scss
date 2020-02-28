@@ -19,21 +19,18 @@
   margin-left: 65vw;
 }
 
-.simple_form {
-  padding: 15px 0 50px 0;
-}
-
 .btn {
  float: right;
 }
 
 
 .messages h2 {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 h3{
-  font-size: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .message-container {
@@ -45,11 +42,16 @@ h3{
 }
 
 .messages {
-  width: 40%;
+  width: 45%;
 }
 
 .messages-img {
-  width: 40%;
+  width: 45%;
+}
+
+.renting-form {
+  padding: 30px 20px 40px 20px;
+
 }
 
 // Extra large devices (large desktops, 1200px and up)

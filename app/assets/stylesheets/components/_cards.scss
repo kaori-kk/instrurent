@@ -2,7 +2,9 @@
   margin-top: 50px;
   display: grid;
   grid-gap: 25px;
-  margin: 50px;
+  padding: 50px;
+  height: 100%;
+
 }
 
 .instrument-card {
@@ -36,8 +38,6 @@
 
 .instrument-name:hover {
   text-decoration :none;
-
-
 }
 
   .instrument-name:hover {
