@@ -1,9 +1,14 @@
 <div class="container">
   <div class="col mb-5">
     <div class="mb-50">
-      <% @requests.each do |request| %>
+      <% requests.each do |request| %>
       <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% if request.instrument.photo.attached? %>
+        <%= cl_image_tag request.instrument.photo.key, class: 'card-product image', crop: :fill%>
+        <% else %>
+        <%= image_tag 'instrument-placeholder.jpg', class: 'card-product image' %>
+        <% end %>
+        <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> -->
         <div class="card-product-infos">
           <h2><%= request.instrument.name %></h2>
           <p>Date: <strong><%= request.start_date %> till <%= request.end_date %></strong></p>
@@ -23,8 +28,8 @@
             </ul>
           </div>
         </div>
-        <% end %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

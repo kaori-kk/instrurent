@@ -1,27 +1,23 @@
 class DashboardController < ApplicationController
 # before_action :find_user
 
-  def my_requests
-    # All requests that the current_user made
-    @my_requests = current_user.requests
-  end
-
-  def all_requests
-    #Instruments belong to current user
-    @user = current_user
-    @requests = []
-    all_my_instruments = Instrument.where(user: @user)
-    all_my_instruments.each do |instrument|
-    @requests << instrument.request if instrument.request != nil
-    end
-    @requests.flatten!
-  end
+  # def all_requests
+  #   # requests = incoming
+  #   #Instruments belong to current user
+  #   @user = current_user
+  #   @requests = []
+  #   all_my_instruments = Instrument.where(user: @user)
+  #   all_my_instruments.each do |instrument|
+  #   @requests << instrument.request if instrument.request != nil
+  #   end
+  #   @requests.flatten!
+  # end
 
 
   def profile
     @user = current_user
-    my_requests
-    all_requests
+    @my_requests = current_user.outgoing_requests
+    @requests = current_user.requests
   end
 
   def request_accepted?
