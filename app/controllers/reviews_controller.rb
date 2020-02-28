@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:intrument_stars, :instrument_review)
+    params.require(:review).permit(:instrument_stars, :instrument_review)
   end
 
 end

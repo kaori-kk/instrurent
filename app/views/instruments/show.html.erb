@@ -16,47 +16,55 @@
         <p><%= @instrument.description %></p>
         <h2 class="price"><%= @instrument.price %>€</h2>
       </div>
-    </div>
-
-      <div class="book" col-8>
+      <div class="book">
         <%= link_to "Book Now", new_instrument_request_path(@instrument), class: "btn btn-primary" %>
       </div>
-
-    <div class="links row col-8">
-      <div class="back">
-        <%= link_to "<< Back", instruments_path %>
-      </div>
+    </div>
+  </div>
 
 
-      <div class="action">
-        <% if current_user == @instrument.user %>
-        <%= link_to edit_instrument_path(@instrument), method: :get do %>
-        <i class="far fa-edit"></i>
-        <% end %>
-        <%= link_to instrument_path(@instrument), method: :delete do %>
-        <i class="far fa-trash-alt"></i>
-        <% end %>
-      </div>
+
+  <div class="links row col-8">
+    <div class="back">
+      <%= link_to "<< Back", instruments_path %>
+    </div>
+
+
+    <div class="action">
+      <% if current_user == @instrument.user %>
+      <%= link_to edit_instrument_path(@instrument), method: :get do %>
+      <i class="far fa-edit"></i>
+      <% end %>
+      <%= link_to instrument_path(@instrument), method: :delete do %>
+      <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="instrument-reviews col-8">
+    <div class="any-reviews">
+      <% if @instrument.reviews.any? %>
+      <% @instrument.reviews.each do |review| %>
+        <div class="review-card">
+          <p>Meesage: <%= review.instrument_review %></p>
+          <p>Stars:
+            <% review.instrument_stars&.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </p>
+        </div>
       <% end %>
     </div>
 
-    <div class="instrument-reviews col-8">
-      <div class="any-reviews">
-        <% if @instrument.reviews.any? %>
-        <% @instrument.reviews.each do |review| %>
-        <p><%= review.instrument_review %></p>
-        <p><%= review.instrument_stars%></p>
-        <% end %>
-      </div>
-
-      <div class="no-reviews">
-        <%else %>
-        <p>There are no reviews for this instrument yet.<br><strong>Be the first!</strong></p>
-        <%end %>
-      </div>
-
+    <div class="no-reviews">
+      <%else %>
+      <p>There are no reviews for this instrument yet.<br><strong>Be the first!</strong></p>
+      <%end %>
     </div>
+
   </div>
+
 
 
 
