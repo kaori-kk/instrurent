@@ -15,8 +15,9 @@
 @import "components/profile";
 
 
-main {
-  min-height: 80vh;
+.main {
   background: white;
+  min-height: 100vh;
+  height: 100%;
 }
 
