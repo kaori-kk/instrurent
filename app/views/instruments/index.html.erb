@@ -1,35 +1,42 @@
 <!-- SEARCH FORM LANDING PAGE -->
 <div class="banner">
   <div class="banner-container">
-    <h1><strong>Play your music</strong><br>Anywhere. Anytime.</h1>
-      <div class="form-container bg-white color-white">
-        <div class="main-form">
-          <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
-          <%= f.input :name, label: 'Find your instrument' %>
-          <%= f.submit "Search", class: "btn btn-primary" %>
-          <% end %>
-        </div>
+    <h1>InstruRent</h1>
+    <h2><strong>Play your music.</strong> Anywhere. Anytime.</h2>
+<!--     <div class="form-container bg-white color-white">
+      <div class="main-form">
+        <%#= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
+        <%#= f.input :name, label: 'Find your instrument' %>
+        <%#= f.submit "Search", class: "btn btn-primary" %>
+        <%# end %>
       </div>
-  </div>
+    </div>
+ -->  </div>
 </div>
 
 <div class="container">
-    <div class="message-container">
-      <div class="messages">
-        <h2>Do you have an instrument<br>you don't use anymore?</h2>
-        <h3>Why not <strong>share</strong> with others and <strong>earn</strong> profit?</h3>
-      </div>
-      <%= image_tag "picture2.png", width: 500, height: 300, crop: :fill, class: 'messages-img' %>
+  <div class="message-container">
+    <div class="messages">
+      <h2>Do you have an instrument<br>you don't use anymore?</h2>
+      <h3>Why not <strong>share</strong> with others and <strong>earn</strong> profit from your unused instrument?</h3>
+      <%= link_to "Rent your instrument", new_instrument_path, class: "btn btn-secondary" %>
     </div>
+    <%= image_tag "picture2.png", width: 500, height: 300, crop: :fill, class: 'messages-img' %>
+  </div>
 
-    <div class="message-container">
-      <%= image_tag "picture1.png", width: 500, height: 300, crop: :fill, class: 'messages-img' %>
+  <div class="message-container">
+    <%= image_tag "picture1.png", width: 500, height: 300, crop: :fill, class: 'messages-img' %>
 
-      <div class="messages">
-        <h2 id="message-h2-tag">Easy to rent your instrument</h2>
-        <h3></h3>
-      </div>
+    <div class="messages">
+      <h2>Do you want to try new instrument?</h2>
+      <h3>but don't want to spend too much money?<br>Why not rent from others and try it out?</h3>
+
+      <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
+      <%= f.input :name, label: false, input_html: {size:"20",  autofocus: true, placeholder: "Search Instrument", class: "search-bar-down"} %>
+      <% end %>
     </div>
+  </div>
+  <h2 id="headline">Instruments to borrow</h2>
 </div>
 
 
@@ -38,25 +45,25 @@
 <!-- CARDS LANDING PAGE -->
 <div class="cards-container">
   <% @instruments.each do |instrument| %>
-    <div class="instrument-card">
-      <% if instrument.photo.attached? %>
-        <%= cl_image_tag instrument.photo.key, class: 'instrument-img', height: 200, width: 350, crop: :fill %>
-      <% else %>
-        <%= image_tag 'instrument-placeholder.jpg', class: 'instrument-img' %>
-      <% end %>
+  <div class="instrument-card">
+    <% if instrument.photo.attached? %>
+    <%= cl_image_tag instrument.photo.key, class: 'instrument-img', height: 200, width: 350, crop: :fill %>
+    <% else %>
+    <%= image_tag 'instrument-placeholder.jpg', class: 'instrument-img' %>
+    <% end %>
 
-      <div class="card-details">
-        <div class="card-instrument-infos">
-          <%= link_to instrument.name, instrument_path(instrument), class: 'instrument-name' %>
-           <h2 class="card-instument-pricing"><%= instrument.price %>€</h2>
+    <div class="card-details">
+      <div class="card-instrument-infos">
+        <%= link_to instrument.name, instrument_path(instrument), class: 'instrument-name' %>
+        <h2 class="card-instument-pricing"><%= instrument.price %>€</h2>
 
-        </div>
+      </div>
 
-        <div class="card-instrument-details">
-          <p><%= instrument.description %></p>
-        </div>
+      <div class="card-instrument-details">
+        <p><%= instrument.description %></p>
       </div>
     </div>
+  </div>
   <% end %>
 </div>
 
