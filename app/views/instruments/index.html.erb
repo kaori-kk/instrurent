@@ -3,10 +3,12 @@
   <div class="banner-container">
     <h1><strong>Play your music</strong><br>Anywhere. Anytime.</h1>
       <div class="form-container bg-white color-white">
-        <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
-        <%= f.input :name, label: 'What kind of instrument are you searching for?' %>
-        <%= f.submit "Search", class: "btn btn-primary" %>
-        <% end %>
+        <div class="main-form">
+          <%= simple_form_for :instrument, url: instruments_path, method: :get do |f| %>
+          <%= f.input :name, label: 'Find your instrument' %>
+          <%= f.submit "Search", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
   </div>
 </div>
