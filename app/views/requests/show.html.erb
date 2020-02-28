@@ -7,11 +7,11 @@
       <p>Here are all the details of your booking:</p>
     </div>
 
-    <div class="product-pic">
+    <div class="instrument-image" style="margin: auto;">
       <% if @instrument.photo.attached? %>
-      <%= cl_image_tag @instrument.photo.key, class: "request-img", height: 200, width: 300, crop: :fill %>
+      <%= cl_image_tag @instrument.photo.key, class: "request-img", crop: :fill %>
      <% else %>
-    <%= image_tag 'instrument-placeholder.jpg', class: "default-img"%>
+    <%= image_tag 'instrument-placeholder.jpg', class: "default-image", height: 300, width: 350%>
       <% end %>
     </div>
 

@@ -9,13 +9,13 @@
   align-self: center;
   margin-bottom: 50px;
 
-  h2 {
-    text-align: center;
-  }
+    h2 {
+      text-align: center;
+    }
 
-  p {
-    text-align: center;
-  }
+    p {
+      text-align: center;
+    }
 }
 
 .details {
@@ -38,24 +38,20 @@
   margin-bottom: 16px;
 }
 
-.product-pic  {
-  overflow: hidden;
-  height: 120px;
-  width: 600px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.product-pic .details {
-  padding: 16px;
+.instrument-image  {
+  height: 300px;
+  width: 300px;
+  align: center;
 }
 
 .request-img {
   height: 100%;
   width: 120px;
   object-fit: cover;
+}
+
+.default-image {
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
