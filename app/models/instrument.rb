@@ -3,6 +3,7 @@ class Instrument < ApplicationRecord
   has_one_attached :photo
 
   has_many :request
+  has_many :reviews, :through => :request
 
   include PgSearch::Model
   pg_search_scope :basic_search,
