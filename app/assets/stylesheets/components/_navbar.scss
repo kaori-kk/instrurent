@@ -7,15 +7,23 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-logo {
+  height: 40px;
+}
+
+.navbar-left-items {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
 }
 
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 42;
-  width: 100%;
   height: 80px;
 }
 
@@ -68,8 +76,8 @@ body {
   float: left;
 }
 
-.col-sm-12 {
-  padding: 0;
-}
 
+.search-bar {
+  margin-left: 30px;
+}
 
