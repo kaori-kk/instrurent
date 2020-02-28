@@ -12,6 +12,8 @@
 .card-product img {
   object-fit: cover;
   justify-content: center;
+  height: 155px;
+  width: 120px;
 }
 
 .card-product h2 {
@@ -47,6 +49,10 @@ li {
   opacity: 0.8;
 }
 
+#decline {
+  font-size: 15px;
+}
 #decline:hover {
   opacity: 0.8;
+
 }
