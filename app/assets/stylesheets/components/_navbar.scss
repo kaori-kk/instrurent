@@ -29,6 +29,7 @@
 
 body {
   padding-top: 80px;
+  min-height: calc(100vh - 80px);
 }
 
 
@@ -79,5 +80,9 @@ body {
 
 .search-bar {
   margin-left: 30px;
+}
+
+#headline {
+ margin-top: 100px;
 }
 
