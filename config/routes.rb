@@ -22,9 +22,14 @@ Rails.application.routes.draw do
   end
 
   resources :requests, only: [:show] do
+    resources :reviews, only: [:new, :create]
+   end
+  
+  resources :requests, only: [:show] do
     member do
       post 'accept'
       post 'decline'
     end
   end
+
 end
