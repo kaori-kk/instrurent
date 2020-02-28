@@ -11,7 +11,7 @@
       <% if @instrument.photo.attached? %>
       <%= cl_image_tag @instrument.photo.key, class: "request-img", crop: :fill %>
      <% else %>
-    <%= image_tag 'instrument-placeholder.jpg', class: "default-image", height: 300, width: 350%>
+    <%= image_tag 'instrument-placeholder.jpg', class: "default-image", height: 300, width: 350 %>
       <% end %>
     </div>
 
