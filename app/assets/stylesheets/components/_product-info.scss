@@ -1,17 +1,21 @@
-.product-details {
-  padding-top: 50px;
+.instrument-details {
+ padding-top: 50px;
 }
 
 .product-image {
   padding-left: 0;
-  padding-right: 0;
+  padding-right: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .default-img {
   height: 300px;
   width: 350px;
+  padding-left: 0;
+  // padding-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .product-info {
@@ -20,8 +24,8 @@
   justify-content: space-around;
   background-color: white;
   padding-right: 20px;
-  padding-top: 0;
-  margin-left: 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 
   h2 {
     font-size: 50px;
@@ -32,17 +36,20 @@
   }
 }
 
-.product-details {
-  justify-content: flex-start;
+.fas {
+  font-size: 8px;
 }
 
 .book {
-  align-self: flex-end;
+  align-self: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 .links {
-  margin-top:20px;
+  display: flex;
   justify-content: space-between;
+  margin-top:20px;
 }
 
 .action {
@@ -51,7 +58,7 @@
 
 .instrument-reviews {
   display: flex;
-  justify-conten: center;
+  justify-content: center;
   margin-top: 100px;
   margin-bottom: 50px;
   padding: 0;
@@ -60,4 +67,12 @@
   .instrument-reviews p {
     font-size: 24px;
   }
+}
+
+.any-reviews {
+  align-self: center;
+}
+
+.no-reviews {
+  align-self: center;
 }

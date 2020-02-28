@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="product-details row">
+  <div class="instrument-details row">
 
     <div class="product-image col-4">
       <% if @instrument.photo.attached? %>
@@ -16,54 +16,63 @@
         <p><%= @instrument.description %></p>
         <h2 class="price"><%= @instrument.price %>€</h2>
       </div>
+
       <div class="book">
         <%= link_to "Book Now", new_instrument_request_path(@instrument), class: "btn btn-primary" %>
       </div>
     </div>
+
   </div>
 
 
+  <div class="row">
+    <div class="col-8 ">
+      <div class="links">
 
-  <div class="links row col-8">
-    <div class="back">
-      <%= link_to "<< Back", instruments_path %>
-    </div>
-
-
-    <div class="action">
-      <% if current_user == @instrument.user %>
-      <%= link_to edit_instrument_path(@instrument), method: :get do %>
-      <i class="far fa-edit"></i>
-      <% end %>
-      <%= link_to instrument_path(@instrument), method: :delete do %>
-      <i class="far fa-trash-alt"></i>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-
-  <div class="instrument-reviews col-8">
-    <div class="any-reviews">
-      <% if @instrument.reviews.any? %>
-      <% @instrument.reviews.each do |review| %>
-        <div class="review-card">
-          <p>Meesage: <%= review.instrument_review %></p>
-          <p>Stars:
-            <% review.instrument_stars&.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-          </p>
+        <div class="back">
+          <%= link_to "<< Back", instruments_path %>
         </div>
-      <% end %>
-    </div>
 
-    <div class="no-reviews">
-      <%else %>
-      <p>There are no reviews for this instrument yet.<br><strong>Be the first!</strong></p>
-      <%end %>
-    </div>
+        <div class="action">
+          <% if current_user == @instrument.user %>
+          <%= link_to edit_instrument_path(@instrument), method: :get do %>
+          <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to instrument_path(@instrument), method: :delete do %>
+          <i class="far fa-trash-alt"></i>
+          <% end %>
+          <% end %>
+        </div>
 
+      </div>
+    </div>
   </div>
+
+    <div class="row">
+      <div class="col-8 offset-2">
+        <div class="instrument-reviews">
+
+          <div class="any-reviews">
+            <% if @instrument.reviews.any? %>
+            <% @instrument.reviews.each do |review| %>
+            <p><%= review.instrument_review %></p>
+              <% review.instrument_stars&.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+            <% end %>
+          </div>
+
+            <%else %>
+              <div class="no-reviews">
+              <p>There are no reviews for this instrument yet. <strong>Be the first!</strong></p>
+            <%end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
