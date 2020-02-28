@@ -38,6 +38,7 @@ INSTRUMENT_PARAMS = [
   {filename: "drum2.png", user: user5, name: 'Drum', price: 250, description: 'Used drums'},
 ]
 
+
 INSTRUMENT_PARAMS.each do |instrument_param|
   file_name = instrument_param[:filename]
   instrument_param.delete(:filename)
@@ -50,14 +51,14 @@ end
  # || "instrument" + (2..8).to_a.sample.to_s + ".png"
 
 puts "Creating requests"
-request1 = Request.new({user: user1, instrument: Instrument.all.sample, accepted: false, start_date: Date.parse('12/9/2019'), end_date: Date.parse('19/9/2020')})
-request2 = Request.new({user: user2, instrument: Instrument.all.sample, accepted: false, start_date: Date.parse('18/8/2019'), end_date: Date.parse('29/9/2020')})
-request3 = Request.new({user: user3, instrument: Instrument.all.sample, accepted: false, start_date: Date.parse('1/6/2019'), end_date: Date.parse('19/2/2020')})
-request4 = Request.new({user: user4, instrument: Instrument.all.sample, accepted: false, start_date: Date.parse('5/6/2019'), end_date: Date.parse('1/1/2020')})
-request5 = Request.new({user: user5, instrument: Instrument.all.sample, accepted: false, start_date: Date.parse('7/12/2019'), end_date: Date.parse('11/6/2020')})
-request6 = Request.new({user: user6, instrument: Instrument.all.sample, accepted: false, start_date: Date.parse('14/4/2019'), end_date: Date.parse('12/5/2020')})
-request7 = Request.new({user: user7, instrument: Instrument.all.sample, accepted: false, start_date: Date.parse('16/1/2019'), end_date: Date.parse('12/3/2020')})
-request8 = Request.new({user: user8, instrument: Instrument.all.sample, accepted: false, start_date: Date.parse('9/9/2019'), end_date: Date.parse('12/2/2020')})
+request1 = Request.new({user: user1, instrument: Instrument.all.sample, status: "pending", start_date: Date.parse('12/9/2019'), end_date: Date.parse('19/9/2020')})
+request2 = Request.new({user: user2, instrument: Instrument.all.sample, status: "pending", start_date: Date.parse('18/8/2019'), end_date: Date.parse('29/9/2020')})
+request3 = Request.new({user: user3, instrument: Instrument.all.sample, status: "pending", start_date: Date.parse('1/6/2019'), end_date: Date.parse('19/2/2020')})
+request4 = Request.new({user: user4, instrument: Instrument.all.sample, status: "pending", start_date: Date.parse('5/6/2019'), end_date: Date.parse('1/1/2020')})
+request5 = Request.new({user: user5, instrument: Instrument.all.sample, status: "pending", start_date: Date.parse('7/12/2019'), end_date: Date.parse('11/6/2020')})
+request6 = Request.new({user: user6, instrument: Instrument.all.sample, status: "pending", start_date: Date.parse('14/4/2019'), end_date: Date.parse('12/5/2020')})
+request7 = Request.new({user: user7, instrument: Instrument.all.sample, status: "pending", start_date: Date.parse('16/1/2019'), end_date: Date.parse('12/3/2020')})
+request8 = Request.new({user: user8, instrument: Instrument.all.sample, status: "pending", start_date: Date.parse('9/9/2019'), end_date: Date.parse('12/2/2020')})
 
 
 request1.save

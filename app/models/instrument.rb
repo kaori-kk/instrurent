@@ -1,6 +1,7 @@
 class Instrument < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
+
   has_many :request
   has_many :reviews, :through => :request
 
@@ -10,4 +11,5 @@ class Instrument < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
 end
